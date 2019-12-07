@@ -14,7 +14,7 @@ kegg <- cts_convert(query = candidate$`CAS Number`,from = "CAS", to="KEGG")
 t <- 1:length(kegg)
 kegg_combine <- sapply(t, function(t){
   paste(kegg[[t]],collapse = "_")
-  })  %>% str_remove_all("C\\d{5}_") %>% str_remove_all("C\\d{5}")
+  })  %>% str_remove_all("C\\d{5}_") %>% str_remove_all("C\\d{5}") 
 
 candidate_kegg <- candidate %>% mutate(kegg_code = kegg_combine)
 ## hand curate
